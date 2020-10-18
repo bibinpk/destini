@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    {% load static %}
+  <meta charset="utf-8">
+  <title>Destinations</title>
+  <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" >
+</head>
+<body>
+  <nav class="menu-bar">
+    <div>
+       <label class="logo">DESTINI</label>
+       <ul class="lists">
+         <li class="list"><a class="link active" href="/">Home</a></li>
+         <li class="list"><a class="link active" href="/about/">About</a></li>
+         <li class="list"><a class="link active" href="/contact/">Contact</a></li>
+       </ul>
+    </div>
+  </nav>
+  <div class="page-area">
+   <nav class="side-bar">
+    <div>
+      <label class="side-logo">DISTRICT</label>
+      <ul class="side-lists">
+        {% for dist in dists %}
+           <li class="side-list"><a class="side-link side-active" href="/destinations/{{ dist.name }}/">{{ dist.name }}</a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+   </nav>
+   <div class="heading">
+    <label class="para-heading">DESTINATIONS</label>
+    <div class="details">
+      {% for dest in dests %}
+          <a href="/destination/{{ dest.name }}">{{ dest.name }}</a><br>
+      {% endfor %}
+    </div>
+  </div>
+
+
+ </div>
+</body>
+</html>

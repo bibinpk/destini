@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale-1.0">
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <nav class="menu-bar">
+    <div>
+       <label class="logo">DESTINI</label>
+       <ul class="lists">
+         <li class="list"><a class="link active" href="/">Home</a></li>
+         <li class="list"><a class="link active" href="/destinations/{{ dist.name }}">Destination</a></li>
+         <li class="list"><a class="link active" href="/about/">About</a></li>
+         <li class="list"><a class="link active" href="/contact/">Contact</a></li>
+       </ul>
+    </div>
+  </nav>
+  <div class="slide">
+      <img src="../static/images/image1.jpg" class="slide-img">
+      <img src="../static/images/image2.jpg" class="slide-img">
+      <img src="../static/images/image3.jpg" class="slide-img">
+      <img src="../static/images/image4.jpg" class="slide-img">
+      <img src="../static/images/image5.jpg" class="slide-img">
+      <img src="../static/images/image6.jpg" class="slide-img">
+  </div>
+  <h1> Popular Destinations </h1>
+  <div>
+     {% for pop in pops %}
+          <div class="grid-div">
+           <img  class="grid-img" src="{{ pop.name.image.url }}">
+           <a href="#">{{ pop.name.name }}</a>
+          </div>
+      {% endfor %}
+  </div>
+</body>
+</html>

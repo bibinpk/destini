@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="menu-bar">
+    <div>
+       <label class="logo">DESTINI</label>
+       <ul class="lists">
+         <li class="list"><a class="link active" href="/">Home</a></li>
+         <li class="list"><a class="link active" href="/destinations/{{ dist.name }}/">Destination</a></li>
+         <li class="list"><a class="link active" href="/about/">About</a></li>
+         <li class="list"><a class="link active" href="/contact/">Contact</a></li>
+       </ul>
+    </div>
+  </nav>
+  <div>
+      <h1 class="headings">{{ dest.name }}</h1>
+      <img class="dest-img" src="{{ dest.image.url }}">
+      <h2 class="dest-h2">Place</h2>
+      <h4 class="dest-h4">{{ dest.place }}</h4>
+      <h2 class="dest-h2">Best Time</h2>
+      <h4 class="dest-h4">{{ dest.best_time }}</h4>
+      <h2 class="dest-h2">Route</h2>
+      <h4 class="dest-h4">{{ dest.route_air }}</h4>
+      <h4 class="dest-h4">{{ dest.route_rail }}</h4>
+      <h4 class="dest-h4">{{ dest.route_road }}</h4>
+      <h2 class="dest-h2">Things to do</h2>
+      <h4 class="dest-h4">{{ dest.Things_to_do }}</h4>
+
+
+  </div>
+
+</body>
+</html>
